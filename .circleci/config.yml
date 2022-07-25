@@ -182,7 +182,7 @@ jobs:
       - checkout
       - add_ssh_keys:
           fingerprints:
-            - 'e3:64:68:12:73:f6:64:98:cd:7b:88:64:4e:93:da:d5'
+            - '98:3e:b6:15:98:a2:09:35:95:c8:86:4a:64:ef:6b:be'
       - run:
           name: Install dependencies
           command: |
@@ -265,3 +265,5 @@ workflows:
               only: [master]
       - configure-infrastructure:
           requires: [deploy-infrastructure]
+      - run-migrations:
+          requires: [configure-infrastructure]
